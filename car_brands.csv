@@ -1,0 +1,100 @@
+﻿car_brand,car_model,mileage_per_gallon,country_of_production,order_number,year,price,car_type
+Toyota,Camry,10,Japan,23,2026," $14,560 ",Sedan
+Toyota,Sienna,20,Japan,34,2026," $27,670 ",Minivan
+Toyota,Corolla,35,Japan,97,2026," $44,770 ",Sedan
+Toyota,Venzo,50,Japan,64,2026," $31,090 ",Crossover
+Toyota,Highlander,30,Japan,93,2026," $63,010 ",SUV
+Toyota,Rav4,40,Japan,90,2026," $47,620 ",SUV
+Toyota,Prius,40,Japan,12,2026," $13,420 ",Sedan
+Toyota,Avalon,60,Japan,24,2026," $19,120 ",Sedan
+Hyundai,Elantra,25,South Korea,51,2026," $60,730 ",Sedan
+Hyundai,Kona,20,South Korea,57,2026," $65,290 ",SUV
+Hyundai,Tuscon,55,South Korea,80,2026," $12,850 ",SUV
+Hyundai,Santa Cruz,35,South Korea,21,2026," $61,870 ",SUV
+Hyundai,Ioniq 5,60,South Korea,79,2026," $15,130 ",Crossover
+Hyundai,Santa Fe,25,South Korea,63,2026," $37,930 ",SUV
+Hyundai,Palisade,40,South Korea,74,2026," $17,980 ",SUV
+Hyundai,Sonata,30,South Korea,20,2026," $49,330 ",Sedan
+Honda,Accord,35,Thailand,39,2026," $27,100 ",Sedan
+Honda,Civic,40,Thailand,15,2026," $32,800 ",Sedan
+Honda,Pilot,55,Thailand,62,2026," $18,550 ",SUV
+Honda,Prologue,60,Thailand,22,2026," $60,160 ",SUV
+Honda,CR-V,40,Thailand,40,2026," $55,600 ",SUV
+Honda,Passport,55,Thailand,92,2026," $59,590 ",SUV
+Honda,Odyssey,35,Thailand,91,2026," $39,070 ",Minivan
+Honda,Ridgeline,40,Thailand,46,2026," $50,470 ",Pickup Truck
+Subaru,Outback,30,Indonesia,31,2026," $61,300 ",Crossover
+Subaru,Crosstrek,55,Indonesia,60,2026," $57,310 ",Crossover
+Subaru,Forester,40,Indonesia,61,2026," $62,440 ",Crossover
+Subaru,Uncharted,55,Indonesia,88,2026," $40,210 ",Crossover
+Subaru,Solterra,25,Indonesia,55,2026," $11,710 ",Crossover
+Subaru,Ascent,25,Indonesia,37,2026," $23,680 ",Crossover
+Subaru,BRZ,60,Indonesia,58,2026," $56,170 ",Sports Car
+Subaru,WRX,55,Indonesia,10,2026," $29,380 ",Sedan
+Subaru,Trailseeker,45,Indonesia,48,2026," $20,260 ",Crossover
+Mercedes,EQE ,10,Germany,87,2026," $25,960 ",Sedan
+Mercedes,CLA ,15,Germany,43,2026," $22,540 ",Sedan
+Mercedes,GLE ,40,Germany,98,2026," $51,040 ",SUV
+Mercedes,GLS ,60,Germany,83,2026," $40,780 ",SUV
+Mercedes,G-Class ,40,Germany,69,2026," $64,150 ",SUV
+Mercedes,C-Class ,25,Germany,66,2026," $41,920 ",Sedan
+Mercedes,S-Class ,60,Germany,14,2026," $10,570 ",Sedan
+Mercedes,AMG GT,25,Germany,67,2026," $39,640 ",Sports Car
+Mercedes,SL Roadster,35,Germany,18,2026," $45,910 ",Sports Car
+BMW,X1,35,Holland,35,2026," $57,880 ",SUV
+BMW,XM,25,Holland,33,2026," $55,030 ",SUV
+BMW,iX3,15,Holland,100,2026," $11,140 ",SUV
+BMW,iX,25,Holland,70,2026," $17,410 ",SUV
+BMW,2 Series,40,Holland,25,2026," $43,060 ",Sedan
+BMW,3 Series,10,Holland,77,2026," $24,820 ",Sedan
+BMW,M5,60,Holland,16,2026," $31,660 ",Sedan
+Volkswagen,Atlas,15,Poland,71,2026," $37,360 ",SUV
+Volkswagen,Tiguan,50,Poland,76,2026," $48,760 ",SUV
+Volkswagen,Taos,15,Poland,29,2026," $63,580 ",SUV
+Volkswagen,ID.4,20,Poland,99,2026," $54,460 ",SUV
+Volkswagen,Jetta,55,Poland,41,2026," $36,790 ",Sedan
+Volkswagen,Golf,40,Poland,26,2026," $12,280 ",Sedan
+Volkswagen,ID. Buzz,10,Poland,49,2026," $29,950 ",Minivan
+Volkswagen,Beetle,45,Poland,73,2026," $20,830 ",Sedan
+Volkswagen,Arteon,10,Poland,27,2026," $36,220 ",Sedan
+Volkswagen,Eos,55,Poland,82,2026," $16,840 ",Sports Car
+Tesla,Model X,25,United States,54,2026," $53,890 ",SUV
+Tesla,Model Y,25,United States,32,2026," $47,050 ",SUV
+Tesla,Model S,40,United States,11,2026," $10,000 ",Sedan
+Tesla,Cybertruck,15,United States,38,2026," $49,900 ",Pickup Truck
+Tesla,Model 3,30,United States,84,2026," $26,530 ",Sedan
+Tesla,Roadster,35,United States,30,2026," $52,750 ",Sports Car
+Lexus,XC60,30,Singapore,106,2026," $38,500 ",SUV
+Lexus,NX 350H,40,Singapore,85,2026," $41,350 ",SUV
+Lexus,RX350,15,Singapore,44,2026," $33,940 ",SUV
+Lexus,IS 350 F SPORT,25,Singapore,56,2026," $32,230 ",Sedan
+Lexus,ES 350e,60,Singapore,95,2026," $64,720 ",Sedan
+Lexus,LX 700h,15,Singapore,13,2026," $33,370 ",SUV
+Lexus,RC 300,50,Singapore,65,2026," $43,630 ",Sports Car
+Acura,Integra,15,Luxembourg,52,2026," $15,700 ",Sedan
+Acura,TLX,20,Luxembourg,72,2026," $24,250 ",Sedan
+Acura,ADX,20,Luxembourg,103,2026," $46,480 ",SUV
+Acura,RDX,30,Luxembourg,104,2026," $13,990 ",SUV
+Acura,MDX,10,Luxembourg,68,2026," $19,690 ",SUV
+Acura,ZDX,60,Luxembourg,81,2026," $16,270 ",SUV
+Acura,NSX,20,Luxembourg,101,2026," $56,740 ",Sports Car
+Acura,RSX,10,Luxembourg,47,2026," $25,390 ",Sports Car
+Acura,CL,45,Luxembourg,19,2026," $23,110 ",Sports Car
+Volvo,EX90,55,France,75,2026," $53,320 ",SUV
+Volvo,EX60,20,France,78,2026," $34,510 ",SUV
+Volvo,XC90,60,France,17,2026," $58,450 ",SUV
+Volvo,XC40,25,France,94,2026," $21,400 ",SUV
+Volvo,V60 ,45,France,50,2026," $51,610 ",Station Wagon
+Volvo,EX30,40,France,86,2026," $44,200 ",SUV
+Volvo,EX40,60,France,107,2026," $35,650 ",SUV
+Volvo,C30,10,France,28,2026," $35,080 ",Sedan
+Volvo,S40,40,France,108,2026," $59,020 ",Sedan
+Volvo,V50,40,France,53,2026," $65,860 ",Station Wagon
+Mazda,CX-70,60,Sweden,59,2026," $42,490 ",SUV
+Mazda,CX-90,50,Sweden,102,2026," $30,520 ",SUV
+Mazda,Mazda3,40,Sweden,36,2026," $28,810 ",Sedan
+Mazda,MX-5 Miata,35,Sweden,89,2026," $52,180 ",Sports Car
+Mazda,MPV,20,Sweden,42,2026," $21,970 ",Minivan
+Mazda,CX-5,20,Sweden,105,2026," $45,340 ",SUV
+Mazda,CX-50,40,Sweden,96,2026," $48,190 ",SUV
+Mazda,CX-30,50,Sweden,45,2026," $28,240 ",SUV

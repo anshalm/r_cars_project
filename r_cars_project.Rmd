@@ -1,0 +1,145 @@
+---
+title: "r_cars_project"
+author: "Anshal Majmudar"
+date: "2026-07-23"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r}
+# Hi! This is a project on Descriptive Statistics using three datasets I made for cars! Let's begin by loading the libraries we want and the csv files! 
+librarian::shelf(dplyr, tidyr, stringi, plotly, DescTools)
+
+car_brands = read.csv("car_brands.csv")
+customer_data = read.csv("customer_data.csv")
+car_company = read.csv("car_company.csv")
+
+# Great now that we loaded in the datasets, lets using the tibble function to make them more easy to read! 
+car_brands = tibble(car_brands)
+customer_data = tibble(customer_data)
+car_company = tibble(car_company)
+
+# For some reason, the price came out as a character and with white space and that is because R does not accept commas in values! Let's fix that using stringi! 
+car_brands = car_brands %>%
+  mutate(price = stri_replace_all_regex(price, "\\D", ""))
+car_brands
+
+car_brands$price = as.integer(car_brands$price)
+car_brands
+
+# This same issue is in car_company for ceo_salary and company_revenue!
+# ceo_salary 
+car_company = car_company %>%
+  mutate(company_revenue = stri_replace_all_regex(company_revenue, "\\D", "")) %>%
+  mutate(ceo_salary = stri_replace_all_regex(ceo_salary, "\\D", "")) 
+car_company
+
+car_company$ceo_salary = as.integer(car_company$ceo_salary)
+car_company$company_revenue = as.numeric(car_company$company_revenue) # We can't use as.integer for this value as it is beyond R's capability to take the standard 32-bit integer (2.14 billion). That's why we use as.numeric instead!
+car_company
+# Great! Now we can work with this dataset! 
+```
+
+```{r}
+# Now that we have loaded and cleaned up the dataset, let us perform descriptive statistical analysis. We shall cover: sum, mean, mode, median, iqr! 
+
+# Sum. Let us find the total sum of all the car's prices! 
+sum(car_brands$price) # Wow the total sum of all the car's prices is 3,755,070 USD! What about if we wanted to find it for one specific brand or all the brands? 
+car_brands %>%
+  filter(car_brand == "Toyota") %>%
+  summarise(toyota_price = sum(price)) # For Toyota! We find the total sum considering all models priced is 261260 USD! 
+
+car_brands %>%
+  group_by(car_brand) %>%
+  summarise(total_price = sum(price)) # For all car brands! We can total sums for all priced models for each car brand! 
+
+# Mean. Let us find the average price for each car brand! 
+car_brands %>%
+  group_by(car_brand) %>%
+  summarise(avg_price = mean(price))
+
+# What if we wanted to see the highest average price and in descending order? 
+car_brands %>%
+  group_by(car_brand) %>%
+  summarise(avg_price = mean(price)) %>%
+  arrange(desc(avg_price)) # We use arrange here to arrange the values here in descending order! We find the Volvo has the highest average price which makes sense as it is a premium car! 
+
+# We can also use slice_max and slice_min to see the highest average price and lowest average price
+car_brands %>%
+  group_by(car_brand) %>%
+  summarise(avg_price = mean(price)) %>%
+  slice_max(avg_price, n = 1) # Highest! 45910 USD!
+
+car_brands %>%
+  group_by(car_brand) %>%
+  summarise(avg_price = mean(price)) %>%
+  slice_min(avg_price, n = 1) # Lowest! 26847 (rounded) USD!
+
+# Mode. Now let us see into the customer data and see what is the most bought model in each brand! In order to do this, we will have to left join car_brands and customer_data by order_number. We will use DescTools Mode function as the base R function will not work here! 
+car_brands_n = car_brands %>%
+  left_join(customer_data)
+
+# Let us use mode now to see the most frequently recurring bought model in each brand! 
+car_brands_n %>%
+  group_by(car_brand) %>%
+  reframe(freq = Mode(quantity))
+
+# We find that for certain brands like Acura the mode shows up once, but for Honda, it shows up twice! That is because, customers chose to get quantities of 1 and 2 very frequently and therefore recur many times! 
+
+# Median. Let us find the median price for each brand! 
+car_brands %>%
+  group_by(car_brand) %>%
+  summarise(med = median(price)) 
+
+# The Median price that is the highest is Tesla at 48475 USD! 
+
+# Let us do some bonus calculations! We will take a look at standard deviation (sd), variance(var), and a total summary of the dataset! 
+# Standard Deviation
+car_brands %>%
+  group_by(car_brand) %>%
+  summarise(std = sd(price))
+
+# Here we can see the spread from the mean is different! Let us take a look at Hyundai! The mean for Hyndai is 40138.75 and the standard deviation is 22294.50. Adding and subtracting the standard deviation from the mean, means Hyundai prices can range high up to 62433.25 USD or really low 17844.25 USD. What we can infer is that prices vary targeting high market buyers and standard middle-class buyers for targeted sale profit! 
+
+# Variance 
+car_brands %>%
+  group_by(car_brand) %>%
+  summarise(variance = var(price))
+
+# Summary 
+summary(car_brands$price) # The summary function shows up a great summary of IQRs, minimum values, maximum values, medians, means, and so forth! Here we can see the minimum price for a car and the maximum price for a car! 
+```
+
+```{r}
+# Now data visualization takes afoot! We need to be able to see what our data looks like on an X/Y axis plot! Luckily we have the plotly package to help us look at interactive data! 
+
+# Let us take a look at the average price per brand on a chart! 
+# Step 1: Make the data you want to use! 
+avg_price_brand = car_brands %>%
+  group_by(car_brand) %>% # x_axis 
+  summarise(avg_price = mean(price)) %>% # y_axis. 
+  arrange(desc(avg_price))
+# Note: It is already in the calculation the x and y axis, the text or categorical variable lies in the group_by(x) and the mean or any other calculation in calc(y) is there and so you know what to plot! 
+
+# Step 2: Plot the data! 
+fig = plot_ly(avg_price_brand, 
+              x = avg_price_brand$car_brand, 
+              y = avg_price_brand$avg_price, 
+              type = "bar", 
+              color = avg_price_brand$car_brand, 
+              colors = "Paired", 
+              text = ~paste("Brand:", avg_price_brand$car_brand, "<br>Average Price:", avg_price_brand$avg_price))
+fig = fig %>%
+  layout(title = "Average Car Price by Brand",
+        xaxis = list(title = "Car Brand", tickangle = 45),
+        yaxis = list(title = "Average Price (USD)"),
+        showlegend = FALSE)
+fig
+
+# As per our analysis above, Volvo has the highest average price out of all the car brands! 
+```
+
