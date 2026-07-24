@@ -45,7 +45,7 @@ car_company
 ```
 
 ```{r}
-# Now that we have loaded and cleaned up the dataset, let us perform descriptive statistical analysis. We shall cover: sum, mean, mode, median, iqr! 
+# Now that we have loaded and cleaned up the dataset, let us perform descriptive statistical analysis. We shall cover: sum, mean, mode, median! 
 
 # Sum. Let us find the total sum of all the car's prices! 
 sum(car_brands$price) # Wow the total sum of all the car's prices is 3,755,070 USD! What about if we wanted to find it for one specific brand or all the brands? 
