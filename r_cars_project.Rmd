@@ -103,7 +103,7 @@ car_brands %>%
   group_by(car_brand) %>%
   summarise(std = sd(price))
 
-# Here we can see the spread from the mean is different! Let us take a look at Hyundai! The mean for Hyndai is 40138.75 and the standard deviation is 22294.50. Adding and subtracting the standard deviation from the mean, means Hyundai prices can range high up to 62433.25 USD or really low 17844.25 USD. What we can infer is that prices vary targeting high market buyers and standard middle-class buyers for targeted sale profit! 
+# Here we can see the spread from the mean is different! Let us take a look at Hyundai! The mean for Hyundai is 40138.75 and the standard deviation is 22294.50. Adding and subtracting the standard deviation from the mean, means Hyundai prices can range high up to 62433.25 USD or really low 17844.25 USD. What we can infer is that prices vary targeting high market buyers and standard middle-class buyers for targeted sale profit! 
 
 # Variance 
 car_brands %>%
